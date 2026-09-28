@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:flutter/material.dart';
 
-class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+import 'package:flutter/material.dart';
+
+class MovieListingView extends StatefulWidget {
+  const MovieListingView({super.key});
+
+  @override
+  State<MovieListingView> createState() => _MovieListingViewState();
+}
+
+class _MovieListingViewState extends State<MovieListingView> {
+  int _ticketQuantity = 1;
+  String _bookingMessage = '';
 
   @override
   State<MovieListing> createState() => _MovieListingState();
@@ -15,81 +26,40 @@ class _MovieListingState extends State<MovieListing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(appTitle, style: cinemaHeaderStyle),
-          backgroundColor: cinemaSurface,
-          iconTheme: const IconThemeData(color: cinemaBrand),
-          elevation: 0,
-        ),
-        drawer: const NavDrawer(),
-        body: Container(
-            padding: const EdgeInsets.all(16.0),
-            child:
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start, 
-                  children: [
-              Text(
-                "Deadpool vs wolverine",
-                style: cinemaHeaderStyle.copyWith(
-                  fontSize: 24,
-                ),
+      appBar: AppBar(
+        title: const Text('Movie Listing'),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Exercise 1: Film Info Container
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(8.0),
               ),
-              const SizedBox(
-                height: 12,
-              ),
-              Row(
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "128 minutes",
-                    style: TextStyle(color: cinemaFontMuted, fontSize: 16),
+                    'Dracula',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
-                    width: 12,
-                  ),
+                  SizedBox(height: 8),
+                  Text('1931 • 1h 25m • Rated PG'),
+                  SizedBox(height: 8),
                   Text(
-                    "PG",
-                    style: TextStyle(color: cinemaFontMuted, fontSize: 16),
-                  )
+                    'The ancient vampire Count Dracula arrives in England and begins to prey upon the innocent Mina Harker and her friends.',
+                  ),
                 ],
               ),
-              const SizedBox(
-                height: 12,
-              ),
-              Text("its a movie about 2 unkillable heroes who hate eachother"),
-              const SizedBox(
-                height: 12,
-              ),
-              DropdownMenu<int>(
-                  initialSelection: _ticketamount,
-                  onSelected: (int? value) {
-                    if (value != null) {
-                      setState(() {
-                        _ticketamount = value;
-                      });
-                    }
-                  },
-                  dropdownMenuEntries: const [
-                    DropdownMenuEntry(value: 1, label: "1"),
-                    DropdownMenuEntry(value: 2, label: "2"),
-                    DropdownMenuEntry(value: 3, label: "3"),
-                    DropdownMenuEntry(value: 4, label: "4"),
-                    DropdownMenuEntry(value: 5, label: "5")
-                  ]),
-              const SizedBox(
-                height: 12,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _feedback = "$_ticketamount ticket(s) added to order";
-                  });
-                },
-                child: Text("Add to order"),
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              Text(_feedback),
-            ])));
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
