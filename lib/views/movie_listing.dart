@@ -18,9 +18,9 @@ class MovieListing extends StatelessWidget {
       body: Container(
         color: Colors.red,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             Text('Deadpool and wolverine'),
+            Text('age rating: 15')
           ],
         ),
       ),
