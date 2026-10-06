@@ -17,10 +17,18 @@ class MovieListing extends StatelessWidget {
       drawer: const NavDrawer(),
       body: Container(
         color: Colors.red,
-        child: Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: const [
-            Text('Deadpool and wolverine'),
-            Text('age rating: 15')
+            Text(
+              'Deadpool and wolverine',
+              style: TextStyle(color: Colors.yellow),
+            ),
+            Text(
+              'age rating: 15',
+              style: TextStyle(color: Colors.yellow),
+            ),
           ],
         ),
       ),
