@@ -25,7 +25,9 @@ class _MovieListingState extends State<MovieListing> {
         body: Container(
             padding: const EdgeInsets.all(16.0),
             child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, 
+                  children: [
               Text(
                 "Deadpool vs wolverine",
                 style: cinemaHeaderStyle.copyWith(
@@ -73,7 +75,9 @@ class _MovieListingState extends State<MovieListing> {
                     DropdownMenuEntry(value: 4, label: "4"),
                     DropdownMenuEntry(value: 5, label: "5")
                   ]),
-                  const SizedBox(height: 12,),
+              const SizedBox(
+                height: 12,
+              ),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
