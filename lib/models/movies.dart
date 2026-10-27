@@ -8,6 +8,8 @@ class Movies {
   final String image_path;
   final Double ticket_price;
 
+  //Movies(this.id, this.name, this.age_rating, this.description, this.image_path, this.ticket_price);
+
   const Movies({
     required this.id,
     required this.name,
