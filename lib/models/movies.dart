@@ -6,7 +6,7 @@ class Movies {
   final String age_rating;
   final String description;
   final String image_path;
-  final Double ticket_price;
+  final double ticket_price;
 
   //Movies(this.id, this.name, this.age_rating, this.description, this.image_path, this.ticket_price);
 
@@ -19,4 +19,3 @@ class Movies {
     required this.ticket_price,
   });
 }
-
