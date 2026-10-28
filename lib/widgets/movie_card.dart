@@ -43,9 +43,27 @@ class MovieCard extends StatelessWidget {
                         style: const TextStyle(color: Colors.black54),
                       )
                     ],
-                ))
+                  ),
+                ),
               ],
             ),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '£${movies.ticket_price.toStringAsFixed(2)}',
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('add to basket'),
+                )
+              ],
+            )
           ],
         ),
       ),
