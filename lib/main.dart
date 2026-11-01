@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/views/home_view.dart';
 import 'package:southsea_cinema/views/movie_listing.dart';
+import 'package:southsea_cinema/screens/menu_screen.dart';
 
 void main() {
   runApp(const SouthseaCinemaApp());
@@ -19,13 +20,14 @@ class SouthseaCinemaApp extends StatelessWidget {
         scaffoldBackgroundColor: cinemaBackground,
         colorScheme: ColorScheme.fromSeed(
           seedColor: cinemaBrand,
+          brightness: Brightness.dark,
           primary: cinemaBrand,
           surface: cinemaSurface,
         ),
       ),
-      initialRoute: '/',
+      home: const MenuScreen(),
       routes: {
-        '/': (context) => const HomeView(),
+        '/home': (context) => const HomeView(),
         '/listing': (context) => const MovieListing(),
       },
     );
