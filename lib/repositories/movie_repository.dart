@@ -4,7 +4,7 @@ class MoviesRepository {
   List<Movies> getMovies() {
     return const [
       Movies(
-        id: 'film',
+        id: 'deadpool-vs-wolverine',
         name: 'Deadpool vs wolverine',
         age_rating: '15',
         description: 'they hate eachother',
@@ -13,7 +13,7 @@ class MoviesRepository {
         ticket_price: 5.0,
       ),
       Movies(
-        id: 'film',
+        id: 'ali-g',
         name: 'Ali G, who iz i',
         age_rating: '18',
         description: 'borat',
@@ -22,5 +22,14 @@ class MoviesRepository {
         ticket_price: 5.0,
       ),
     ];
+  }
+
+  Movies? getMovieById(String id) {
+    for (final movie in getMovies()) {
+      if (movie.id == id) {
+        return movie;
+      }
+    }
+    return null;
   }
 }
