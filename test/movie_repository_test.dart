@@ -8,7 +8,7 @@ void main() {
   final Movies? movie = repository.getMovieById('ali-g');
 
   expect(movie, isNotNull);
-  expect(movie?.name, 'Ali G, who iz i');
+  expect(movie?.name, 'ali g who iz i');
   expect(movie?.ticket_price, 5.0);
   });
 
