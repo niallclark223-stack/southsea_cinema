@@ -21,7 +21,7 @@ class MovieCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
-                  movies.image_path,
+                  movies.imagePath,
                   width: 80,
                   height: 80,
                   fit: BoxFit.cover,
@@ -46,7 +46,7 @@ class MovieCard extends StatelessWidget {
                           ),
                           const SizedBox(width: 8),
                           Text(
-                            movies.age_rating,
+                            movies.ageRating,
                             style: const TextStyle(
                               fontSize: 12,
                               color: Colors.black,
@@ -69,7 +69,7 @@ class MovieCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '£${movies.ticket_price.toStringAsFixed(2)}',
+                  '£${movies.ticketPrice.toStringAsFixed(2)}',
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,

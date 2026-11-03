@@ -1,22 +1,21 @@
 class Movies {
   final String id;
   final String name;
-  final String age_rating;
+  final String ageRating;
   final String description;
-  final String image_path;
+  final String imagePath;
   final String length;
-  final double ticket_price;
-
-  //Movies(this.id, this.name, this.age_rating, this.description, this.image_path, this.ticket_price);
+  final double ticketPrice;
 
   const Movies({
     required this.id,
     required this.name,
-    required this.age_rating,
+    required this.ageRating,
     required this.description,
-    required this.image_path,
+    required this.imagePath,
     required this.length,
-    required this.ticket_price,
+    required this.ticketPrice,
   });
-  String get formattedPrice => '£${ticket_price.toStringAsFixed(2)}';
+  
+  String get formattedPrice => '£${ticketPrice.toStringAsFixed(2)}';
 }
