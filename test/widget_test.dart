@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:southsea_cinema/main.dart';
-import 'package:southsea_cinema/screens/menu_screen.dart';
+import 'package:southsea_cinema/views/menu_screen.dart';
 
 void main() {
   testWidgets('Basic app loading test', (WidgetTester tester) async {
