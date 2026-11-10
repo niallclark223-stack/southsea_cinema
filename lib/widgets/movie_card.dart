@@ -76,7 +76,16 @@ class MovieCard extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return OrderScreen(movies: movies);
+                        },
+                      ),
+                    ),
+                  },
                   child: const Text('Book'),
                 ),
               ],
