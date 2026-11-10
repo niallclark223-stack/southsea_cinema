@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movies.dart';
-import 'package:southsea_cinema/repositories/movie_repository.dart';
-import 'package:southsea_cinema/widgets/movie_card.dart';
 
 class OrderScreen extends StatefulWidget {
   final Movies movies;
