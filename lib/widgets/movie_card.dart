@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movies.dart';
+import 'package:southsea_cinema/views/order_screen.dart';
 
 class MovieCard extends StatelessWidget {
   final Movies movies;
@@ -84,7 +85,7 @@ class MovieCard extends StatelessWidget {
                           return OrderScreen(movies: movies);
                         },
                       ),
-                    ),
+                    );
                   },
                   child: const Text('Book'),
                 ),
