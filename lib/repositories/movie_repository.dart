@@ -22,6 +22,15 @@ class MoviesRepository {
         imagePath: 'assets/images/ali_g.jpg',
         ticketPrice: 5.0,
       ),
+      Movies(
+        id: 'White-chicks',
+        name: 'White Chicks',
+        ageRating: '18',
+        description: '2 FBI agents',
+        length: '110',
+        imagePath: 'assets/images/white_chicks.jpg',
+        ticketPrice: 5.0,
+      ),
     ];
   }
 
