@@ -15,7 +15,7 @@ class MoviesRepository {
       ),
       Movies(
         id: 'ali-g',
-        name: 'Ali G, who iz i',
+        name: 'Ali G, who iz i', 
         ageRating: '18',
         description: 'borat',
         length: '110',
