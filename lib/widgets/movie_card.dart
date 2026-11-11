@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movies.dart';
 import 'package:southsea_cinema/views/order_screen.dart';
+import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class MovieCard extends StatelessWidget {
   final Movies movies;
@@ -76,7 +77,7 @@ class MovieCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                ElevatedButton(
+                PrimaryButton(
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -87,7 +88,7 @@ class MovieCard extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text('Book'),
+                  label: 'Book',
                 ),
               ],
             ),
