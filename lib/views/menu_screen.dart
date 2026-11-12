@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movies.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
+import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 class MenuScreen extends StatelessWidget{
   const MenuScreen({super.key});
@@ -15,6 +16,7 @@ class MenuScreen extends StatelessWidget{
       appBar: AppBar(
         title: const Text('Now Showing'),
       ),
+      drawer: const NavDrawer(),
       body: ListView.builder(
         itemCount: movie.length,
         itemBuilder: (context, index){
