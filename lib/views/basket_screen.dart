@@ -14,7 +14,7 @@ class BasketScreen extends StatefulWidget {
 }
 
 class _BasketScreenState extends State<BasketScreen> {
-  String _confirmationMessage = '';
+  final String _confirmationMessage = '';
 
   @override
   Widget build(BuildContext context) {
