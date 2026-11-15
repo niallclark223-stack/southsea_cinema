@@ -21,6 +21,22 @@ class _BasketScreenState extends State<BasketScreen> {
     final BasketRepository basket = BasketRepository.instance;
     final List<CartItem> items = basket.getItems();
 
+    final Widget content;
+    if (items.isEmpty) {
+      if (_confirmationMessage.isNotEmpty) {
+        content = Column(
+          children: [
+            const Text('Empty basket placeholder'),
+            Text(_confirmationMessage),
+          ],
+        );
+      } else {
+        content = const Text('Empty basket placeholder');
+      }
+    } else {
+      content = const Text('Basket list placeholder');
+    }
+
     return Scaffold(
       drawer: const NavDrawer(),
       appBar: AppBar(
@@ -28,17 +44,7 @@ class _BasketScreenState extends State<BasketScreen> {
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              items.isEmpty
-                  ? 'Your basket is empty'
-                  : 'Basket placeholder: ${items.length} item(s)',
-            ),
-            if (_confirmationMessage.isNotEmpty) Text(_confirmationMessage),
-          ],
-        ),
+        child: content,
       ),
     );
   }
