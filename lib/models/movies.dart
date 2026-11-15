@@ -16,6 +16,18 @@ class Movies {
     required this.length,
     required this.ticketPrice,
   });
+
+  factory Movies.fromJson(Map<String, dynamic> json) {
+    return Movies(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      ageRating: json['age_rating'] as String,
+      description: json['description'] as String,
+      imagePath: json['image_path'] as String,
+      length: json['length'] as String,
+      ticketPrice: (json['ticket_price'] as num).toDouble(),
+    );
+  }
   
   String get formattedPrice => '£${ticketPrice.toStringAsFixed(2)}';
 }
