@@ -1,0 +1,29 @@
+[
+    {
+        "id": "deadpool-vs-wolverine",
+        "name": "Deadpool vs wolverine",
+        "ageRating": "15",
+        "description": "they hate eachother",
+        "length": "128",
+        "imagePath": "assets/images/deadpool_vs_wolverine.jpg",
+        "ticketPrice": 5.0
+    },
+    {
+        "id": "ali-g",
+        "name": "Ali G, who iz i",
+        "ageRating": "18",
+        "description": "borat",
+        "length": "110",
+        "imagePath": "assets/images/ali_g.jpg",
+        "ticketPrice": 5.0
+    },
+    {
+        "id": "white-chicks",
+        "name": "White Chicks",
+        "ageRating": "18",
+        "description": "2 FBI agents",
+        "length": "109",
+        "imagePath": "assets/images/white_chicks.jpg",
+        "ticketPrice": 5.0
+    }
+]
