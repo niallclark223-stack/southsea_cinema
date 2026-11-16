@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movies.dart';
 import 'package:southsea_cinema/views/order_screen.dart';
 import 'package:southsea_cinema/widgets/primary_button.dart';
+import 'package:southsea_cinema/repositories/basket_repository.dart';
 
 class MovieCard extends StatelessWidget {
   final Movies movies;
@@ -79,13 +80,9 @@ class MovieCard extends StatelessWidget {
                 ),
                 PrimaryButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return OrderScreen(movies: movies);
-                        },
-                      ),
+                    BasketRepository.instance.addItem(movies);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('${movies.name} added to basket')),
                     );
                   },
                   label: 'Book',
