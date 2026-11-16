@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/cart_item.dart';
 import 'package:southsea_cinema/repositories/basket_repository.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
-import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class BasketScreen extends StatefulWidget {
   const BasketScreen({super.key});

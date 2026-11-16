@@ -46,7 +46,7 @@ class MoviesRepository {
     final String raw = await rootBundle.loadString('assets/data/movies.json');
     final List<dynamic> decoded = jsonDecode(raw) as List<dynamic>;
     return decoded
-        .map((item) => Movies.fromJson(item as Map<String, dynamic>))
+       .map((item) => Movies.fromJson(item as Map<String, dynamic>))
         .toList();
   }
 }

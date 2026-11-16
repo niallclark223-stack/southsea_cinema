@@ -33,7 +33,7 @@ class _MenuScreenState extends State<MenuScreen> {
         _movies = loaded;
         _isLoading = false;
       });
-    } catch (e) {
+        } catch (e) {
       if (!mounted) return;
       setState(() {
         _errorMessage = 'Could not load films';
