@@ -35,7 +35,9 @@ class SouthseaCinemaApp extends StatelessWidget {
       home: const MenuScreen(),
      routes: {
       '/home': (context) => const MenuScreen(),
-      '/listing': (context) => const MovieListing(),
+      '/listing': (context) => MovieListing(
+        movie: ModalRoute.of(context)!.settings.arguments as dynamic,
+      ),
       '/basket': (context) => const BasketScreen(),
       '/settings': (context) => const SettingsScreen(),
       },

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movies.dart';
-import 'package:southsea_cinema/repositories/basket_repository.dart';
-import 'package:southsea_cinema/views/movie_detail_screen.dart';
+import 'package:southsea_cinema/views/movie_listing.dart';
 import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class MovieCard extends StatelessWidget {
@@ -11,19 +10,21 @@ class MovieCard extends StatelessWidget {
     required this.movies,
   });
 
+  void _openListing(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MovieListing(movie: movies),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => MovieDetailScreen(movie: movies),
-            ),
-          );
-        },
+        onTap: () => _openListing(context),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -86,14 +87,7 @@ class MovieCard extends StatelessWidget {
                   ),
                   PrimaryButton(
                     label: 'Book',
-                    onPressed: () {
-                      BasketRepository.instance.addItem(movies);
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('${movies.name} added to basket'),
-                        ),
-                      );
-                    },
+                    onPressed: () => _openListing(context),
                   ),
                 ],
               ),
