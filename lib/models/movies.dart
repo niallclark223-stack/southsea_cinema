@@ -19,15 +19,16 @@ class Movies {
 
   factory Movies.fromJson(Map<String, dynamic> json) {
     return Movies(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      ageRating: json['age_rating'] as String,
-      description: json['description'] as String,
-      imagePath: json['image_path'] as String,
-      length: json['length'] as String,
-      ticketPrice: (json['ticket_price'] as num).toDouble(),
+      id: json['id'].toString(),
+      name: json['name'].toString(),
+      ageRating: (json['age_rating'] ?? json['ageRating']).toString(),
+      description: json['description'].toString(),
+      imagePath: (json['image_path'] ?? json['imagePath']).toString(),
+      length: json['length'].toString(),
+      ticketPrice:
+          ((json['ticket_price'] ?? json['ticketPrice']) as num).toDouble(),
     );
   }
-  
+
   String get formattedPrice => '£${ticketPrice.toStringAsFixed(2)}';
 }
