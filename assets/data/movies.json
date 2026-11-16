@@ -20,10 +20,10 @@
     {
         "id": "white-chicks",
         "name": "White Chicks",
-        "ageRating": "18",
+        "age_rating": "18",
         "description": "2 FBI agents",
         "length": "109",
-        "imagePath": "assets/images/white_chicks.jpg",
-        "ticketPrice": 5.0
+        "image_path": "assets/images/white_chicks.jpg",
+        "ticket_price": 5.0
     }
 ]

@@ -1,7 +1,16 @@
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:southsea_cinema/models/movies.dart';
+import '../models/movies.dart';
+
 class MoviesRepository {
+  Future<List<Movies>> loadMovies() async {
+    final String raw = await rootBundle.loadString('assets/data/movies.json');
+    final List<dynamic> decoded = jsonDecode(raw) as List<dynamic>;
+    return decoded
+        .map((item) => Movies.fromJson(item as Map<String, dynamic>))
+        .toList();
+  }
+
   List<Movies> getMovies() {
     return const [
       Movies(
@@ -15,20 +24,11 @@ class MoviesRepository {
       ),
       Movies(
         id: 'ali-g',
-        name: 'Ali G, who iz i', 
+        name: 'Ali G, who iz i',
         ageRating: '18',
         description: 'borat',
         length: '110',
         imagePath: 'assets/images/ali_g.jpg',
-        ticketPrice: 5.0,
-      ),
-      Movies(
-        id: 'White-chicks',
-        name: 'White Chicks',
-        ageRating: '18',
-        description: '2 FBI agents',
-        length: '110',
-        imagePath: 'assets/images/white_chicks.jpg',
         ticketPrice: 5.0,
       ),
     ];
@@ -41,12 +41,5 @@ class MoviesRepository {
       }
     }
     return null;
-  }
-    Future<List<Movies>> loadMovies() async {
-    final String raw = await rootBundle.loadString('assets/data/movies.json');
-    final List<dynamic> decoded = jsonDecode(raw) as List<dynamic>;
-    return decoded
-       .map((item) => Movies.fromJson(item as Map<String, dynamic>))
-        .toList();
   }
 }
