@@ -6,9 +6,13 @@ class MoviesRepository {
   Future<List<Movies>> loadMovies() async {
     final String raw = await rootBundle.loadString('assets/data/movies.json');
     final List<dynamic> decoded = jsonDecode(raw) as List<dynamic>;
-    return decoded
-        .map((item) => Movies.fromJson(item as Map<String, dynamic>))
-        .toList();
+    final List<Movies> movies = [];
+
+    for (final item in decoded) {
+      movies.add(Movies.fromJson(item as Map<String, dynamic>));
+    }
+
+    return movies;
   }
 
   List<Movies> getMovies() {
